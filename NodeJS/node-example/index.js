@@ -7,9 +7,9 @@ function solveRect(l, b) {
            console.log("ERROR: ", err.message);
        } else {
            console.log("The area of the rectangle of dimensions l = "
-               + l + " and b = " + b + " is " + rectangle.area() );
+               + l + " and b = " + b + " is " + rectangle.area(l, b) );
            console.log("The perimeter of the rectangle of dimensions l = "
-               + l + " and b = " + b + " is " + rectangle.perimeter() );
+               + l + " and b = " + b + " is " + rectangle.perimeter(l, bs) );
        }
     });
 
