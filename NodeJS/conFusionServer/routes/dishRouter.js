@@ -163,20 +163,18 @@ dishRouter.route('/:dishId/comments/:commentId')
             }, (err) => next(err))
             .catch((err) => next(err));
     })
-    .post( (req, res,next) => {
+    .post( (req, res, next) => {
         res.statusCode = 403;
-        res.end('POST operation not supported on /dishes/' + req.params.dishId + '/comments/' + req.commentId);
+        res.end('POST operation not supported on /dishes/' + req.params.dishId + '/comments/' + req.params.commentId);
     })
     .put((req, res, next) => {
         Dishes.findById(req.params.dishId)
             .then((dish) => {
                 if (dish != null && dish.comments.id(req.params.commentId) != null) {
                     if (req.body.rating) {
-                        // TODO
                         dish.comments.id(req.params.commentId).rating = req.body.rating;
                     }
-                    if (req.body.comments) {
-                        // TODO
+                    if (req.body.comment) {
                         dish.comments.id(req.params.commentId).comment = req.body.comment;
                     }
                     dish.save()
@@ -185,18 +183,21 @@ dishRouter.route('/:dishId/comments/:commentId')
                             res.setHeader('Content-Type', 'application/json');
                             res.json(dish);
                         }, (err) => next(err));
-                } else if (dish == null) {
-                    err = new Error('Dish ' + req.params.dishId + ' not found!')
+                }
+                else if (dish == null) {
+                    err = new Error('Dish ' + req.params.dishId + ' not found');
                     err.status = 404;
                     return next(err);
-                } else {
-                    err = new Error('Comment ' + req.params.commentId + ' not found!')
+                }
+                else {
+                    err = new Error('Comment ' + req.params.commentId + ' not found');
                     err.status = 404;
                     return next(err);
                 }
             }, (err) => next(err))
             .catch((err) => next(err));
     })
+
     .delete( (req, res,next) => {
         Dishes.findById(req.params.dishId)
             .then((dish) => {
