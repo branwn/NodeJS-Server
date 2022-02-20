@@ -197,7 +197,6 @@ dishRouter.route('/:dishId/comments/:commentId')
             }, (err) => next(err))
             .catch((err) => next(err));
     })
-
     .delete( (req, res,next) => {
         Dishes.findById(req.params.dishId)
             .then((dish) => {
