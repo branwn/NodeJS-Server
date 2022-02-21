@@ -2,6 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var User = require('../models/user');
 var passport = require('passport');
+var authenticate = require('../authenticate')
 
 var router = express.Router();
 router.use(bodyParser.json());
@@ -32,24 +33,27 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/login',
     passport.authenticate('local'),
-    (req, res, next) => {
+    (req, res) => {
 
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json({success: true, status: 'Login Successful!'});
+    var token = authenticate.getToken({_id: req.user._id});
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.json({success: true, token: token, status: 'Login Successful!'});
 });
 
-router.get('/logout', (req, res) => {
-  if (req.session) {
-    req.session.destroy();
-    res.clearCookie('session-id');
-    res.redirect('/');
-  }
-  else {
-    var err = new Error('You are not logged in!');
-    err.status = 403;
-    next(err);
-  }
+router.get('/logout',
+    (req, res) => {
+        res.redirect('/');
+  // if (req.session) {
+  //   req.session.destroy();
+  //   res.clearCookie('session-id');
+  //   res.redirect('/');
+  // }
+  // else {
+  //   var err = new Error('You are not logged in!');
+  //   err.status = 403;
+  //   next(err);
+  // }
 });
 
 
