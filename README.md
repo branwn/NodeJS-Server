@@ -1,5 +1,6 @@
 # NodeJS-Server
--  ☑️ Express Framework and MongoDB
+Express Framework and MongoDB
+-  ☑️ REST APIs
 - HTTPS and Secure Communication
 - User Authentication with Passport
 - OAuth and User Authentication
