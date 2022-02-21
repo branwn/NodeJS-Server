@@ -2,7 +2,7 @@
 Express Framework and MongoDB
 -  ☑️ REST APIs
 - HTTPS and Secure Communication
-- User Authentication with Passport
+- ☑️ User Authentication with Passport
 - OAuth and User Authentication
 - Backend as a Service (BaaS)
 
