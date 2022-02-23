@@ -4,7 +4,7 @@ Express Framework and MongoDB
 - ☑️ User Authentication with Cookies and Sessions
 - ☑️ User Authentication with Passport
 - ☑️ HTTPS and Secure Communication
-- Cross-Origin Resource Sharing (CORS)
+- ☑️ Cross-Origin Resource Sharing (CORS)
 - OAuth and User Authentication
 - Backend as a Service (BaaS)
 
