@@ -13,6 +13,20 @@ Based on Express Framework and MongoDB (Mongoose)
 
 ## Quick Start
 
+- Generate Private Key
+
+  ```
+  openssl genrsa 1024 > private.key
+  ```
+
+  ```
+  openssl req -new -key private.key -out cert.csr
+  ```
+
+  ```
+  openssl x509 -req -in cert.csr -signkey private.key -out certificate.pem
+  ```
+
 - Install Dependencies
 
   ```
@@ -21,11 +35,11 @@ Based on Express Framework and MongoDB (Mongoose)
 
 - Start MongoDB
 
-  1. Direct to a directory where containing an empty directory called "data" .
+  Direct to a directory where containing an empty directory called "data" .
 
-  2. ```
-     mongod --dbpath=data --bind_ip 127.0.0.1
-     ```
+  ```
+  mongod --dbpath=data --bind_ip 127.0.0.1
+  ```
 
 - Start Express
 
@@ -33,19 +47,6 @@ Based on Express Framework and MongoDB (Mongoose)
   npm start
   ```
 
-  
 
-## Generate Private Key
 
-```
-openssl genrsa 1024 > private.key
-```
-
-```
-openssl req -new -key private.key -out cert.csr
-```
-
-```
-openssl x509 -req -in cert.csr -signkey private.key -out certificate.pem
-```
 
