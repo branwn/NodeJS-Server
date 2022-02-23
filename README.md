@@ -1,9 +1,10 @@
 # NodeJS-Server
-Express Framework and MongoDB
+Based on Express Framework and MongoDB (Mongoose)
 - ☑️ REST APIs
 - ☑️ User Authentication with Cookies and Sessions
-- ☑️ User Authentication with Passport
+- ☑️ User Authentication with Passport (Express Framwork)
 - ☑️ HTTPS and Secure Communication
+- ☑️ Files Uploading
 - ☑️ Cross-Origin Resource Sharing (CORS)
 - OAuth and User Authentication
 - Backend as a Service (BaaS)
