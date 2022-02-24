@@ -13,12 +13,12 @@ var config = require('./config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dishRouter = require('./routes/dishRouter');
+var topicRouter = require('./routes/topicRouter');
 var uploadRouter = require('./routes/uploadRouter');
 
 const mongoose = require ('mongoose');
 
-const Dishes = require('./models/dishes');
+const Topics = require('./models/topics');
 
 const url = config.mongoUrl;
 const connect = mongoose.connect(url);
@@ -59,7 +59,7 @@ app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/dishes', dishRouter);
+app.use('/topics', topicRouter);
 app.use('/imageUpload', uploadRouter);
 
 

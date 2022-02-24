@@ -22,7 +22,7 @@ const commentSchema = new Schema({
     timestamps: true
 });
 
-const dishSchema = new Schema ({
+const topicSchema = new Schema ({
     name: {
         type: String,
         required: true,
@@ -58,6 +58,6 @@ const dishSchema = new Schema ({
     timestamps: true
 });
 
-var Dishes = mongoose.model('Dish', dishSchema);
+var Topics = mongoose.model('Topic', topicSchema);
 
-module.exports = Dishes;
+module.exports = Topics;

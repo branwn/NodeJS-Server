@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const authenticate = require('../authenticate');
 const cors = require('./cors');
 
-const Dishes = require('../models/dishes');
+const Dishes = require('../models/topics');
 
-const dishRouter = express.Router();
+const topicRouter = express.Router();
 
-dishRouter.use(bodyParse.json());
+topicRouter.use(bodyParse.json());
 
-dishRouter.route('/')
+topicRouter.route('/')
     .options(cors.corsWithOptions, (req, res) => { // preflight options
         res.sendStatus(200);
     })
@@ -50,7 +50,7 @@ dishRouter.route('/')
             .catch((err) => next(err));
     });
 
-dishRouter.route('/:dishId')
+topicRouter.route('/:dishId')
     .options(cors.corsWithOptions, (req, res) => { // preflight options
         res.sendStatus(200);
     })
@@ -92,7 +92,7 @@ dishRouter.route('/:dishId')
 
 
 
-dishRouter.route('/:dishId/comments')
+topicRouter.route('/:dishId/comments')
     .options(cors.corsWithOptions, (req, res) => { // preflight options
         res.sendStatus(200);
     })
@@ -162,7 +162,7 @@ dishRouter.route('/:dishId/comments')
             .catch((err) => next(err));
     });
 
-dishRouter.route('/:dishId/comments/:commentId')
+topicRouter.route('/:dishId/comments/:commentId')
     .options(cors.corsWithOptions, (req, res) => { // preflight options
         res.sendStatus(200);
     })
@@ -255,4 +255,4 @@ dishRouter.route('/:dishId/comments/:commentId')
 
 
 
-module.exports = dishRouter;
+module.exports = topicRouter;
