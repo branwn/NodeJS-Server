@@ -16,10 +16,16 @@
 
             <tr>
                 <td style="background-color:#FFD700;width:100px;">
-                    <a href="https://localhost:3443/login">login</a>
+                    <b>Menu</b>
                 </td>
                 <td style="background-color:#eeeeee;height:600px;width:400px;">
-                    <iframe src="https://localhost:3443/dishes" frameborder="0"></iframe>
+                    <form name="login" action="https://localhost:3443/users/login" method="post">
+                    <label>
+                        Username:<input type="json" name="username"><br>
+                        Password: <input type="json" name="password"><br>
+                        <input type="submit" value="Login">
+                    </label>
+                    </form>
                 </td>
             </tr>
 

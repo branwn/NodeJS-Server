@@ -10,7 +10,7 @@ Based on Express Framework and MongoDB (Mongoose)
 
 ## Quick Start
 
-- Generate Private Key
+- Generate Private Key in "bin" folder
 
   ```
   openssl genrsa 1024 > private.key

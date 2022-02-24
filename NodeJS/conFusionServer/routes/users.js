@@ -27,7 +27,6 @@ router.post('/signup', cors.corsWithOptions, (req, res, next) => {
         return;
     }
     User.register(
-
       new User({username: req.body.username}), req.body.password,
       (err, user) => {
           if (err) {
