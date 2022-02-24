@@ -7,9 +7,6 @@ Based on Express Framework and MongoDB (Mongoose)
 - ☑️ Files Uploading
 - ☑️ Cross-Origin Resource Sharing (CORS)
 - OAuth and User Authentication
-- Backend as a Service (BaaS)
-
-
 
 ## Quick Start
 
@@ -46,7 +43,6 @@ Based on Express Framework and MongoDB (Mongoose)
   ```
   npm start
   ```
-
 
 
 
