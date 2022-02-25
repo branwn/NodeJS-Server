@@ -6,7 +6,6 @@ var fs = require('fs');
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
 
-// 如果url=‘/’ ,读取指定文件下的html文件，渲染到页面。
     fs.readFile('./public/index.html','utf-8',function(err,data){
         if( err ){
           // throw err ;
@@ -24,7 +23,6 @@ router.get('/', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   // res.render('index', { title: 'Express' });
 
-// 如果url=‘/’ ,读取指定文件下的html文件，渲染到页面。
   fs.readFile('./public/login.html','utf-8',function(err,data){
     if( err ){
       // throw err ;
