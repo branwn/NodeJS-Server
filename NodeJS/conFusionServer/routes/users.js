@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 var User = require('../models/user');
 var passport = require('passport');
 var authenticate = require('../authenticate')
+const cookieParser = require('cookie-parser');
 const cors = require('./cors');
+const {getToken} = require("../authenticate");
 
 var router = express.Router();
 router.use(bodyParser.json());
@@ -60,9 +62,13 @@ router.post('/login',
     (req, res) => {
 
     var token = authenticate.getToken({_id: req.user._id});
+
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
+
+    // set token to json
     res.json({success: true, token: token, status: 'Login Successful!'});
+
 });
 
 router.get('/logout',

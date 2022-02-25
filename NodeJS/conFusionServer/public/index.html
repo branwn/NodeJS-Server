@@ -7,7 +7,7 @@
     <body>
         <table width="600" border="0">
             <tr>
-                <td colspan="2" style="background-color:#FFA500;">
+                <td colspan="2" style="background-color:#FFA500;text-align:center;">
                     <h1>
                         <a href="https://localhost:3443/">Forum</a>
                     </h1>
@@ -15,12 +15,40 @@
             </tr>
 
             <tr>
-                <td style="background-color:#FFD700;width:100px;">
+                <td style="background-color:#FFD700;width:50px;text-align:center;">
                     <a href="https://localhost:3443/login">login</a>
                 </td>
-                <td style="background-color:#eeeeee;height:600px;width:400px;">
+                <td style="background-color:#eeeeee;height:400px;width:400px;">
                     <iframe src="https://localhost:3443/topics" frameborder="0"></iframe>
                 </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="background-color:#FFA500;text-align:center;"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="background-color:#FFA500;text-align:center;">
+                    <h3>add topic</h3>
+                    <input id="theToken" type="text">
+                    <script>
+		                function myFunction() {
+			                var x = document.getElementById("theToken").value;
+                            headers: { Authorization: `bearer ${x}` }
+                            alert(`token is ${x}`);
+		                }
+                    </script>
+                    <button type="button" onclick="myFunction()">setToken</button>
+
+                    <form name="submitTopic" action="https://localhost:3443/topics" method="post">
+                        <label>
+                            topic:<input type="json" name="topic"><br>
+                            description: <input type="json" name="description"><br>
+                            <input type="submit" value="submit">
+                        </label>
+                    </form>
+                </td>
+
             </tr>
 
             <tr>
